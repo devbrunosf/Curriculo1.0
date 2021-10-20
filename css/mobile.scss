@@ -1,0 +1,251 @@
+// @import 'style.scss';
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin display($display, $direction, $content, $align) {
+    display: $display;
+    align-items: $align;
+    justify-content: $content;
+    flex-direction: $direction;
+}
+
+@mixin color($bgcolor, $color, $border) {
+    background-color: $bgcolor;
+    color: $color;
+    border: $border;
+}
+
+@mixin font($family, $size, $weight) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+$green: #328574;
+
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 0px 25px;
+        overflow: visible;
+        .hamburguer {
+            @include position(absolute, null, 25px, null, null);
+            opacity: 1;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.5s;
+            b:nth-child(1) {
+                font-size: 65px;
+                display: flex;
+            }
+            b:nth-child(2) {
+                font-size: 45px;
+                display: none;
+            }
+        }
+        ul {
+            @include size(100vw, auto);
+            @include display(flex, column, center, flex-end);
+            @include position(absolute, 60px, null, null, null);
+            margin-left: -25px;
+            padding: 5px;
+            row-gap: 10px;
+            display: none;
+            transition: 0.5s;
+            li:nth-child(1) {
+                display: none;
+            }
+            li:nth-child(2) {
+                @include size(100px, auto);
+                border: none;
+                border-radius: 0px;
+                border-bottom: 1px solid #fff;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+            li:nth-child(3) {
+                @include size(100px, auto);
+                @include color(transparent, #fff, none);
+                border-radius: 0px;
+                border-bottom: 1px solid #fff;
+                background-color: rgba(0, 0, 0, 0.8);
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .header {
+        .hamburguer {
+            color: $green;
+        }
+        ul {
+            background-color: rgba(255, 255, 255, 0.7);
+            li:nth-child(2) {
+                background-color: #fff;
+                border: none;
+                a {
+                    color: $green;
+                }
+            }
+            li:nth-child(3) {
+                background-color: $green;
+                border: 1px solid $green;
+                a {
+                    color: #fff;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .step1 {
+        .container {
+            p {
+                span {
+                    @include size(100%, auto);
+                    display: block;
+                    @include color(null, #fff, null);
+                    @include font("Raleway", 21px, 500);
+                    line-height: 300%;
+                    letter-spacing: 0px;
+                }
+                span:nth-child(4) {
+                    @include font("Josefin Sans", calc(3.6em + 1vw), 600);
+                    line-height: 100%;
+                    letter-spacing: 3px;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+
+    .curriculo {
+        .container {
+            padding: 150px 50px;
+            .conhecimento {
+                margin-top: 80px;
+                h1 {
+                    @include size(auto, auto);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 465px) {
+    .step1 {
+        .container {
+            p {
+                span {
+                    @include size(100%, auto);
+                    display: block;
+                    @include color(null, #fff, null);
+                    @include font("Raleway", 17px, 500);
+                    line-height: 300%;
+                    letter-spacing: 0px;
+                }
+                span:nth-child(4) {
+                    @include font("Josefin Sans", calc(2.9em + 1vw), 600);
+                    line-height: 100%;
+                    letter-spacing: 7px;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+
+    .portfolio {
+        .container {
+            .cards {
+                .card {
+                    figure {
+                        @include size(100%, 180px);
+                        img {
+                            @include size(100%, 100%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .step1 {
+        .container {
+            p {
+                span {
+                    @include size(100%, auto);
+                    display: block;
+                    @include color(null, #fff, null);
+                    @include font("Raleway", 13px, 500);
+                    line-height: 300%;
+                    letter-spacing: 0px;
+                }
+                span:nth-child(4) {
+                    @include font("Josefin Sans", calc(2.1em + 1vw), 600);
+                    line-height: 100%;
+                    letter-spacing: 8px;
+                    margin-top: 25px;
+                    b:nth-child(7) {
+                        margin-left: -30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .curriculo {
+        .container {
+            .conhecimento {
+                min-width: 300px;
+                h1 {
+                    @include size(auto, auto);
+                    @include font("poppins", 17px, 700);
+                }
+                p:nth-child(2) {
+                    span {
+                        @include size(auto, auto);
+                        margin: 10px 3px;
+                        @include font("Prompt", 15px, 500);
+                    }
+                }
+                p:nth-child(3) {
+                    @include display(flex, row, center, center);
+                    flex-wrap: wrap;
+                    margin-bottom: 25px;
+                    span {
+                        @include size(auto, auto);
+                        margin: 10px 3px;
+                        @include font("Prompt", 15px, 500);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .step3 {
+        .container {
+            div {
+                width: 100%;
+            }
+        }
+    }
+    // Página next
+    .next {
+        div {
+            @include size(100%, 50vh);
+        }
+    }
+}
