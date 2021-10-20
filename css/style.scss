@@ -1,35 +1,20 @@
-// @font-face {
-//     font-family: "Baloo 2";
-//     font-style: normal;
-//     font-weight: 400;
-//     font-display: swap;
-//     src: url(https://fonts.gstatic.com/s/baloo2/v2/wXKrE3kTposypRyd51jcAA.woff2) format("woff2");
-//     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-//         U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-// }
+@font-face {
+    font-family: "Baloo 2";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/baloo2/v2/wXKrE3kTposypRyd51jcAA.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
-// @font-face {
-//     font-family: "Poppins";
-//     font-style: normal;
-//     font-weight: 100;
-//     font-display: swap;
-//     src: url(https://fonts.gstatic.com/s/poppins/v15/pxiGyp8kv8JHgFVrLPTucHtA.woff2) format("woff2");
-//     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-//         U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-// }
-
-// Novas Fontes... (Atualizar)
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600;700;900&display=swap");
-
-// @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700;900&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400;600;700&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600;700&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700;900&display=swap");
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/poppins/v15/pxiGyp8kv8JHgFVrLPTucHtA.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 @mixin size($width, $height) {
     width: $width;
@@ -63,11 +48,9 @@
     left: $left;
 }
 
-// $green: #2c8560;
-$green: #328574;
+$green: #2c8560;
 $valid: #00ffa1;
 $invalid: #ff002f;
-
 * {
     margin: 0px;
     border: none;
@@ -80,30 +63,17 @@ $invalid: #ff002f;
 
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    position: sticky;
+    scroll-behavior: smooth;
+    background: #f5f5f5;
     overflow-x: hidden;
-}
-
-/* Typing effect */
-@keyframes typing {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Cursor Effect */
-@keyframes blink-caret {
-    from {
-        border-color: transparent;
-    }
-    50% {
-        border-color: #fff;
-    }
-    to {
-        border-color: transparent;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
@@ -116,65 +86,50 @@ header {
     z-index: 50;
     div {
         @include size(auto, auto);
-        @include display(flex, row, space-between, center);
         b {
-            @include font("Josefin Sans", 25px, 400);
+            @include font("baloo 2", 27px, 100);
             @include color(transparent, #fff, null);
             cursor: pointer;
         }
     }
-
     .hamburguer {
         opacity: 0;
     }
     ul {
         @include size(auto, auto);
         @include display(flex, row, space-between, center);
-        column-gap: 15px;
+        column-gap: 25px;
         li:nth-child(1) {
-            @include size(100px, 35px);
+            @include size(120px, 35px);
             text-align: center;
             display: none;
             opacity: 0;
             cursor: pointer;
             a {
-                @include font("Comfortaa", 17px, 400);
+                @include font("poppins", 19px, 700);
                 line-height: 35px;
-                letter-spacing: 0px;
+                letter-spacing: 1px;
                 @include color(transparent, #fff, null);
                 cursor: pointer;
-            }
-            &:hover {
-                box-shadow: inset 100px 0 0 0 #eee;
-                transition: all 0.7s ease;
-                a {
-                    color: #000;
-                    transition: all 0.1s ease;
-                }
-            }
-            &:not(:hover) {
-                transition: 0.5s;
             }
         }
         li:nth-child(2) {
-            @include size(100px, 35px);
-            @include color(transparent, #fff, null);
-            box-shadow: inset 0 0 0 0 transparent;
+            @include size(120px, 35px);
+            @include color(transparent, #fff, 1px solid #fff);
+            border-radius: 3px;
             text-align: center;
             cursor: pointer;
             a {
-                @include font("Comfortaa", 17px, 400);
+                @include font("poppins", 17px, 700);
                 line-height: 35px;
-                letter-spacing: 0px;
                 @include color(transparent, #fff, null);
                 cursor: pointer;
             }
             &:hover {
-                box-shadow: inset 100px 0 0 0 #eee;
-                transition: all 0.7s ease;
+                background-color: #fff;
+                transition: 0.5s;
                 a {
                     color: #000;
-                    transition: all 0.1s ease;
                 }
             }
             &:not(:hover) {
@@ -182,24 +137,22 @@ header {
             }
         }
         li:nth-child(3) {
-            @include size(100px, 35px);
-            @include color(transparent, #fff, null);
-            box-shadow: inset 0 0 0 0 transparent;
+            @include size(120px, 35px);
+            @include color(#fff, #000, 1px solid #fff);
+            border-radius: 3px;
             text-align: center;
             cursor: pointer;
             a {
-                @include font("Comfortaa", 17px, 400);
+                @include font("poppins", 17px, 700);
                 line-height: 35px;
-                letter-spacing: 0px;
-                @include color(transparent, #fff, null);
+                @include color(transparent, #000, null);
                 cursor: pointer;
             }
             &:hover {
-                box-shadow: inset 100px 0 0 0 #eee;
-                transition: 0.7s;
+                background-color: transparent;
+                transition: 0.5s;
                 a {
-                    color: #000;
-                    transition: all 0.1s ease;
+                    color: #fff;
                 }
             }
             &:not(:hover) {
@@ -213,12 +166,7 @@ header {
     @include size(100vw, 60px);
     @include color(#f5f5f5, null, null);
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
-    #logo {
-        b {
-            color: $green;
-        }
-    }
-    #logos {
+    div {
         b {
             color: $green;
         }
@@ -228,16 +176,6 @@ header {
             a {
                 color: $green;
             }
-            &:hover {
-                box-shadow: inset 100px 0 0 0 $green;
-                a {
-                    color: #fff;
-                    font-weight: 700;
-                }
-            }
-            &:not(:hover) {
-                transition: 0.5s;
-            }
         }
         li:nth-child(2) {
             border: 1px solid $green;
@@ -246,7 +184,6 @@ header {
             }
             &:hover {
                 background-color: $green;
-                box-shadow: inset 100px 0 0 0 $green;
                 border: 1px solid $green;
                 a {
                     color: #fff;
@@ -289,262 +226,87 @@ header {
     .container {
         @include size(80vw, 100%);
         @include display(flex, column, center, center);
-        position: absolute;
         p {
             @include size(100%, auto);
-            margin-top: 100px;
             span {
                 @include size(100%, auto);
                 display: block;
                 @include color(null, #fff, null);
-                @include font("Raleway", 23px, 500);
-                line-height: 300%;
-                letter-spacing: 3px;
+                @include font("poppins", calc(0.7em + 1vw), 600);
+                line-height: 55px;
+                letter-spacing: 2px;
             }
             span:nth-child(4) {
-                @include font("Josefin Sans", calc(3.6em + 1vw), 600);
-                line-height: 100%;
+                font-size: calc(2.1em + 1vw);
+                letter-spacing: 5px;
                 margin-top: 25px;
-
-                b:nth-child(1) {
-                    opacity: 0;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(2) {
-                    opacity: 0;
-                    margin: 0px -35px;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 0.2s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(3) {
-                    opacity: 0;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 0.4s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(4) {
-                    opacity: 0;
-                    margin: 0px -35px;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 0.6s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(5) {
-                    opacity: 0;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 0.8s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(6) {
-                    opacity: 0;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 1s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(7) {
-                    opacity: 0;
-                    margin-left: -15px;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 1.2s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(8) {
-                    opacity: 0;
-                    margin: 0px -35px;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 1.4s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(9) {
-                    opacity: 0;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 1.6s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(10) {
-                    opacity: 0;
-                    margin: 0px -35px;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 1.8s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(11) {
-                    opacity: 0;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 2s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(12) {
-                    opacity: 0;
-                    margin: 0px -35px;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 2.2s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(13) {
-                    opacity: 0;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 1;
-                    animation-delay: 2.4s;
-                    animation-fill-mode: forwards;
-                }
-                b:nth-child(14) {
-                    opacity: 0;
-                    border-right: 0.15em solid #fff;
-                    animation: typing 0.2s, blink-caret 0.2s step-end 4;
-                    animation-delay: 2.6s;
-                    animation-fill-mode: forwards;
-                }
             }
         }
     }
 }
 
-.curriculo {
-    @include size(100vw, auto);
-    min-height: 100vh;
-    @include display(flex, column, center, center);
-    @include color(#eee, $green, null);
+aside {
+    @include size(100vw, 100vh);
     overflow: hidden;
     .container {
         @include size(100vw, 100%);
-        @include color(#eee, $green, null);
-        @include display(flex, row, space-around, center);
-        column-gap: 50px;
-        row-gap: 50px;
-        padding: 50px;
-        flex-wrap: wrap;
-        .pessoal {
-            @include size(300px, auto);
-            p {
-                @include font("poppins", 17px, 400);
-                @include color(#eee, #777, null);
-                margin: 15px 0px;
-                b {
-                    @include font("poppins", 19px, 700);
-                    @include color(#eee, #1f6e5eee, null);
-                    letter-spacing: 1px;
-                }
-            }
-        }
-        .conhecimento {
+        @include color(#fff, $green, null);
+        @include display(flex, row, space-evenly, center);
+        div:nth-child(1) {
             @include size(40%, auto);
-            min-width: 370px;
             @include display(flex, column, center, center);
-            h1 {
-                @include size(100%, auto);
-                @include font("poppins", 19px, 700);
-                @include color(#eee, #1f6e5eee, null);
-                letter-spacing: 1px;
-                margin-bottom: 5px;
-            }
-            p:nth-child(2) {
-                @include display(flex, row, center, center);
-                flex-wrap: wrap;
-                span {
-                    @include size(auto, auto);
-                    @include color(#328574, #eee, null);
-                    border-radius: 5px;
-                    padding: 7px 13px;
-                    margin: 10px 5px;
-                    text-align: center;
-                    @include font("Prompt", 19px, 500);
+            ol {
+                li {
+                    @include size(100%, auto);
+                    @include font("poppins", calc(2em + 1vw), 700);
                     letter-spacing: 3px;
-                    a {
-                        @include color(transparent, #eee, null);
-                    }
-                    &:hover {
-                        @include color(#20ad91, #eee, null);
-                        cursor: default;
-                        transition: 0.3s;
-                    }
+                    list-style: inside decimal-leading-zero;
+                }
+                li:nth-child(1) {
+                    @include font(null, calc(0.5em + 1vw), null);
+                    list-style: none;
+                    transform: translateX(-500px);
                 }
             }
-            p:nth-child(3) {
-                @include display(flex, row, center, center);
-                flex-wrap: wrap;
-                margin-bottom: 25px;
-                span {
-                    @include size(auto, auto);
-                    @include color(#2c8560, #eee, null);
-                    border-radius: 5px;
-                    padding: 7px 13px;
-                    margin: 10px 5px;
-                    text-align: center;
-                    @include font("Prompt", 19px, 500);
-                    letter-spacing: 3px;
-                    a {
-                        @include color(transparent, #eee, null);
-                    }
-                    &:hover {
-                        @include color(#12b973cc, #eee, null);
-                        cursor: default;
-                        transition: 0.3s;
-                    }
+        }
+        div:nth-child(2) {
+            @include size(40%, auto);
+            @include display(flex, column, center, center);
+            figure {
+                @include size(300px, 380px);
+                img {
+                    @include size(100%, 100%);
+                    border-radius: 3px;
                 }
             }
         }
     }
 }
 
-.portfolio {
-    @include size(100vw, auto);
+.step2 {
+    @include size(100vw, 100vh);
     overflow: hidden;
     .container {
         @include size(100vw, 100%);
-        @include color(#fff, #fff, null);
+        @include color($green, #fff, null);
         @include display(flex, row, center, center);
-        padding: 150px 20px;
-        overflow: hidden;
-        .cards {
-            @include size(100%, 100%);
-            @include display(flex, row, center, center);
-            column-gap: 30px;
-            row-gap: 50px;
-            flex-wrap: wrap;
+        div {
+            @include size(80%, 100%);
+            @include color($green, #fff, null);
+            @include display(flex, column, center, flex-start);
             transition: 0.5s;
-
-            .card {
-                @include size(500px, auto);
-                @include color(#fff, $green, null);
-                @include display(flex, column, flex-start, center);
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-                border: 1px solid #fff;
-                position: relative;
-
-                figure {
-                    @include size(100%, 265px);
-
-                    img {
-                        @include size(100%, 100%);
-                    }
-                }
-
-                p {
-                    @include size(100%, 100px);
-                    @include display(flex, column, center, center);
-                    @include color(rgba(255, 255, 255, 0.7), #333, null);
-                    @include font("poppins", 15px, 500);
-                    text-align: center;
+            span {
+                @include size(100%, auto);
+                @include font("poppins", calc(0.8em + 1vw), 600);
+                margin-bottom: 10px;
+            }
+            ul {
+                li {
+                    @include font("poppins", calc(0.9em + 1vw), 600);
+                    list-style: inside decimal-leading-zero;
                     a {
-                        @include font("poppins", 17px, 700);
-                        color: $green;
-                        margin-top: 15px;
-                        border-bottom: 1px solid;
+                        color: #fff;
+                        padding-left: 5px;
                     }
                 }
             }
@@ -552,7 +314,7 @@ header {
     }
 }
 
-.contato {
+.step3 {
     @include size(100vw, 100vh);
     @include display(flex, row, center, center);
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/pexels-photo-2330137.webp);
@@ -608,7 +370,7 @@ header {
                     &:not(:focus) {
                         transition: 0.4s;
                     }
-                    &:focus ~ legend {
+                    &:focus~legend {
                         visibility: visible;
                         transition: 0.5s;
                     }
@@ -618,7 +380,7 @@ header {
                     &:valid {
                         box-shadow: 0px 3px 3px $valid;
                     }
-                    &:valid ~ legend {
+                    &:valid~legend {
                         color: $valid;
                         visibility: visible;
                         transition: 0.5s;
@@ -629,7 +391,7 @@ header {
                     &:not(:placeholder-shown):invalid {
                         box-shadow: 0px 3px 5px $invalid;
                     }
-                    &:not(:placeholder-shown):invalid ~ legend {
+                    &:not(:placeholder-shown):invalid~legend {
                         color: $invalid;
                         visibility: visible;
                         transition: 0.5s;
@@ -667,6 +429,23 @@ header {
     }
 }
 
+footer {
+    @include size(100vw, auto);
+    min-height: 100px;
+    @include display(flex, row, space-between, center);
+    @include color($green, #fff, null);
+    padding: 10px 30px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    div {
+        @include size(auto, auto);
+        p {
+            @include font("poppins", 1rem, 600);
+            letter-spacing: 1px;
+        }
+    }
+}
+
 .next {
     @include size(100vw, 100vh);
     @include display(flex, row, center, center);
@@ -674,7 +453,7 @@ header {
         @include size(80%, 50vh);
         @include display(flex, column, center, center);
         @include color(#2c8560, #fff, null);
-        @include font("poppins", calc(0.5em+1vw), 100);
+        @include font("poppins", calc(.5em + 1vw), 100);
         border-radius: 3px;
     }
 }

@@ -6,10 +6,10 @@ window.setTimeout(function() {
     // Menu scroll
     const menu = document.querySelector('header');
     // Pegando a posicao.y do aside (Sobre)...
-    const sobre = document.querySelector('.curriculo');
+    const sobre = document.querySelector('aside');
     const posicaoSobre = sobre.getBoundingClientRect();
     // Pegando a posicao.y do step3 (Contato)...
-    const contato = document.querySelector('.contato');
+    const contato = document.querySelector('.step3');
     const posicaoContato = contato.getBoundingClientRect();
 
     // Voltar ao topo clicando no #logo...
@@ -36,7 +36,7 @@ window.setTimeout(function() {
         window.scroll(0, posicaoSobre.y, behavior = 'smooth');
     });
 
-    // Scroll da página até o .contato (Contato)...
+    // Scroll da página até o .step3 (Contato)...
     const moveContato = document.querySelector('.moveContato');
     moveContato.addEventListener("click", function(event) {
         event.preventDefault;
@@ -52,7 +52,7 @@ window.setTimeout(function() {
         const icone = hamburguer.children[0];
 
         /* Muda as cores do menu, background branco e fonte verde (class .header) */
-        const aside = document.querySelector('.curriculo');
+        const aside = document.querySelector('aside');
         const posicao = aside.getBoundingClientRect();
 
         if (posicao.y < 55) {
@@ -77,7 +77,7 @@ window.setTimeout(function() {
             inicio.style.transition = '.5s';
         }
 
-        const contato = document.querySelector('.contato');
+        const contato = document.querySelector('.step3');
         const posicaoContato = contato.getBoundingClientRect();
 
         if (posicaoContato.y < 25) {
@@ -134,7 +134,7 @@ window.setTimeout(function() {
             span4.style.transition = '.5s';
         }
 
-        const step3 = document.querySelector('.contato');
+        const step3 = document.querySelector('.step3');
         const h1 = step3.children[0].children[0].children[0];
         const p1 = step3.children[0].children[0].children[1];
         const p2 = step3.children[0].children[0].children[2];
@@ -162,8 +162,93 @@ window.setTimeout(function() {
             p2.style.transition = '.3s';
         }
     }
+
+    function animeAside() {
+
+        const aside = document.querySelector('.aside');
+        const posicaoAside = aside.getBoundingClientRect();
+        const ul = aside.children[0].children[0].children[0];
+        const img = aside.children[0].children[1].children[0];
+
+        const span = ul.children[0];
+        const li1 = ul.children[1];
+        const li2 = ul.children[2];
+        const li3 = ul.children[3];
+        const li4 = ul.children[4];
+        const li5 = ul.children[5];
+
+        if (posicaoAside.y < 460) {
+            img.style.opacity = '1';
+            img.style.transition = '.9s';
+        } else {
+            img.style.opacity = '0';
+            img.style.transition = '.9s';
+        }
+
+        if (posicaoAside.y < 445) {
+            span.style.transform = "translateX(0px)";
+            span.style.opacity = '1';
+            span.style.transition = '.5s';
+        } else {
+            span.style.transform = "translateX(-500px)";
+            span.style.opacity = '0';
+            span.style.transition = '.5s';
+        }
+
+        if (posicaoAside.y < 415) {
+            li1.style.transform = "translateX(0px)";
+            li1.style.opacity = '1';
+            li1.style.transition = '.5s';
+        } else {
+            li1.style.transform = "translateX(-500px)";
+            li1.style.opacity = '0';
+            li1.style.transition = '.5s';
+        }
+
+        if (posicaoAside.y < 365) {
+            li2.style.transform = "translateX(0px)";
+            li2.style.opacity = '1';
+            li2.style.transition = '.5s';
+        } else {
+            li2.style.transform = "translateX(-500px)";
+            li2.style.opacity = '0';
+            li2.style.transition = '.5s';
+        }
+
+        if (posicaoAside.y < 300) {
+            li3.style.transform = "translateX(0px)";
+            li3.style.opacity = '1';
+            li3.style.transition = '.5s';
+        } else {
+            li3.style.transform = "translateX(-500px)";
+            li3.style.opacity = '0';
+            li3.style.transition = '.5s';
+        }
+
+        if (posicaoAside.y < 240) {
+            li4.style.transform = "translateX(0px)";
+            li4.style.opacity = '1';
+            li4.style.transition = '.5s';
+        } else {
+            li4.style.transform = "translateX(-500px)";
+            li4.style.opacity = '0';
+            li4.style.transition = '.5s';
+        }
+
+        if (posicaoAside.y < 185) {
+            li5.style.transform = "translateX(0px)";
+            li5.style.opacity = '1';
+            li5.style.transition = '.5s';
+        } else {
+            li5.style.transform = "translateX(-500px)";
+            li5.style.opacity = '0';
+            li5.style.transition = '.5s';
+        }
+    }
+
     window.addEventListener('scroll', function() {
         animeScroll();
+        animeAside();
     })
 
     // focus no nome
